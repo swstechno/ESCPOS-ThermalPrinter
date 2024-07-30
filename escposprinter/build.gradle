@@ -43,8 +43,8 @@ afterEvaluate {
     publishing {
         publications {
             release(MavenPublication) {
-                groupId = 'com.github.sws'
-                artifactId = 'ESCPOS-ThermalPrinter-Android'
+                groupId = 'com.github.swstechno'
+                artifactId = 'ESCPOS-ThermalPrinter'
                 version = libraryVersionName
                 pom {
                     name = 'Android library for ESC/POS Thermal Printer'
@@ -55,11 +55,5 @@ afterEvaluate {
                 }
             }
         }
-        repositories {
-        maven {
-            name = "Bitbucket"
-            url = uri("https://api.bitbucket.org/2.0/repositories/kc_miau/esc-pos-printer-maven/src/master/releases")
-        }
-    }
     }
 }

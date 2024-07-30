@@ -1,6 +1,6 @@
-[![Jitpack package repository - ESCPOS-ThermalPrinter-Android v3.3.0](https://jitpack.io/v/DantSu/ESCPOS-ThermalPrinter-Android.svg)](https://jitpack.io/#DantSu/ESCPOS-ThermalPrinter-Android/3.3.0)
-[![](https://jitpack.io/v/DantSu/ESCPOS-ThermalPrinter-Android/month.svg)](https://jitpack.io/#DantSu/ESCPOS-ThermalPrinter-Android/3.3.0)
-[![](https://jitpack.io/v/DantSu/ESCPOS-ThermalPrinter-Android/week.svg)](https://jitpack.io/#DantSu/ESCPOS-ThermalPrinter-Android/3.3.0)
+[![Jitpack package repository - ESCPOS-ThermalPrinter v3.3.0](https://jitpack.io/v/swstechno/ESCPOS-ThermalPrinter.svg)](https://jitpack.io/#swstechno/ESCPOS-ThermalPrinter/3.3.0)
+[![](https://jitpack.io/v/swstechno/ESCPOS-ThermalPrinter/month.svg)](https://jitpack.io/#swstechno/ESCPOS-ThermalPrinter/3.3.0)
+[![](https://jitpack.io/v/swstechno/ESCPOS-ThermalPrinter/week.svg)](https://jitpack.io/#swstechno/ESCPOS-ThermalPrinter/3.3.0)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 # Android library for ESC/POS Thermal Printer
@@ -29,11 +29,11 @@ Useful library to help Android developers to print with (Bluetooth, TCP, USB) ES
 - [Charset encoding](#charset-encoding)
 - [Formatted text : syntax guide](#formatted-text--syntax-guide)
 - [Class list](#class-list)
-  - [BluetoothPrintersConnections](#user-content-class--comdantsuescposprinterconnectionbluetoothbluetoothprintersconnections)
-  - [UsbPrintersConnections](#user-content-class--comdantsuescposprinterconnectionusbusbprintersconnections)
-  - [EscPosPrinter](#user-content-class--comdantsuescposprinterescposprinter)
-  - [PrinterTextParserImg](#user-content-class--comdantsuescposprintertextparserprintertextparserimg)
-  - [EscPosCharsetEncoding](#user-content-class--comdantsuescposprinterescposcharsetencoding)
+  - [BluetoothPrintersConnections](#user-content-class--comswstechnoescposprinterconnectionbluetoothbluetoothprintersconnections)
+  - [UsbPrintersConnections](#user-content-class--comswstechnoescposprinterconnectionusbusbprintersconnections)
+  - [EscPosPrinter](#user-content-class--comswstechnoescposprinterescposprinter)
+  - [PrinterTextParserImg](#user-content-class--comswstechnoescposprintertextparserprintertextparserimg)
+  - [EscPosCharsetEncoding](#user-content-class--comswstechnoescposprinterescposcharsetencoding)
 - [Projects using this library](#projects-using-this-library)
 - [Contributing](#contributing)
 
@@ -56,13 +56,13 @@ Developed for SDK version 16 (Android 4.1 Jelly Bean) and above.
 To test this library, it's pretty simple !
 
 - Create a directory and open a terminal inside
-- Run `git clone https://github.com/DantSu/ESCPOS-ThermalPrinter-Android.git .`
+- Run `git clone https://github.com/swstechno/ESCPOS-ThermalPrinter.git .`
 - Open the directory with Android Studio
 - Test it !
 
 ## Installation
 
-**Step 1.** Add the [JitPack](https://jitpack.io/#DantSu/ESCPOS-ThermalPrinter-Android/3.3.0) repository to your build file. Add it in your root `/build.gradle` at the end of repositories:
+**Step 1.** Add the [JitPack](https://jitpack.io/#swstechno/ESCPOS-ThermalPrinter/3.3.0) repository to your build file. Add it in your root `/build.gradle` at the end of repositories:
 
 ```
 allprojects {
@@ -78,7 +78,7 @@ allprojects {
 ```
 dependencies {
     ...
-    implementation 'com.github.DantSu:ESCPOS-ThermalPrinter-Android:3.3.0'
+    implementation 'com.github.swstechno:ESCPOS-ThermalPrinter:3.4.1'
 }
 ```
 
@@ -137,13 +137,13 @@ printer
         "[L]Tel : +33801201456\n" +
         "[L]\n" +
         "[C]<barcode type='ean13' height='10'>831254784551</barcode>\n" +
-        "[C]<qrcode size='20'>https://dantsu.com/</qrcode>"
+        "[C]<qrcode size='20'>https://swstechno.com/</qrcode>"
     );
 ```
 
 Below a picture of the receipt printed with the code above :
 
-![Example of a printed receipt](https://dantsu.com/files/receipt-thermal-printer.png?1)
+![Example of a printed receipt](https://swstechno.com/files/receipt-thermal-printer.png?1)
 
 ## TCP
 
@@ -187,7 +187,7 @@ new Thread(new Runnable() {
                     "[L]Tel : +33801201456\n" +
                     "[L]\n" +
                     "[C]<barcode type='ean13' height='10'>831254784551</barcode>\n" +
-                    "[C]<qrcode size='20'>https://dantsu.com/</qrcode>"
+                    "[C]<qrcode size='20'>https://swstechno.com/</qrcode>"
                 );
         } catch (Exception e) {
             e.printStackTrace();
@@ -273,7 +273,7 @@ printer
         "[L]Tel : +33801201456\n" +
         "[L]\n" +
         "[C]<barcode type='ean13' height='10'>831254784551</barcode>\n" +
-        "[C]<qrcode size='20'>https://dantsu.com/</qrcode>"
+        "[C]<qrcode size='20'>https://swstechno.com/</qrcode>"
     );
 ```
 
@@ -363,7 +363,7 @@ Use `PrinterTextParserImg.bitmapToHexadecimalString` to convert `Drawable`, `Bit
 - `<img>` must be directly preceded by nothing or an alignment tag (`[L][C][R]`).
 - `</img>` must be directly followed by a new line `\n`.
 - You can't write text on a line that contains `<img></img>`.
-- Maximum height of printed image is 256px, If you want to print larger bitmap. Please refer to this solution: [#70](https://github.com/DantSu/ESCPOS-ThermalPrinter-Android/issues/70#issuecomment-714390014)
+- Maximum height of printed image is 256px, If you want to print larger bitmap. Please refer to this solution: [#70](https://github.com/swstechno/ESCPOS-ThermalPrinter/issues/70#issuecomment-714390014)
 
 ### Barcode
 
@@ -377,7 +377,7 @@ Prints a EAN8 barcode (height: 10mm, width: ~70% printer width, text: displayed 
 Prints a UPC-A barcode (height: 20mm, width: ~70% printer width, text: displayed below).
 - `<barcode type='upce' height='25' width='50' text='none'>512789</barcode>` : **(6 numbers)**  
 Prints a UPC-E barcode (height: 25mm, width: ~50mm, text: hidden).
-- `<barcode type='128' width='40' text='above'>DantSu</barcode>` : **(string)**  
+- `<barcode type='128' width='40' text='above'>swstechno</barcode>` : **(string)**  
 Prints a barcode 128 (height: 10mm, width: ~40mm, text: displayed above).
 
 **⚠ WARNING ⚠** : This tag has several constraints :
@@ -391,7 +391,7 @@ Prints a barcode 128 (height: 10mm, width: ~40mm, text: displayed above).
 
 `<qrcode></qrcode>` tag allows you to print a QR code. Inside the tag you need to write the QR code data.
 
-- `<qrcode>https://dantsu.com/</qrcode>` :
+- `<qrcode>https://swstechno.com/</qrcode>` :
 Prints a QR code with a width and height of 20 millimeters.
 - `<qrcode size='25'>123456789</qrcode>` :
 Prints a QR code with a width and height of 25 millimeters.
@@ -415,7 +415,7 @@ Easy way to get the first bluetooth printer paired / connected.
 Get a list of bluetooth printers.
 - **return** `BluetoothConnection[]`
 
-⚠️ If the arrray returned by `getList()` does not contain you printer or if `selectFirstPaired()` does not return your printer. Read this issue : https://github.com/DantSu/ESCPOS-ThermalPrinter-Android/issues/80#issuecomment-729759832
+⚠️ If the arrray returned by `getList()` does not contain you printer or if `selectFirstPaired()` does not return your printer. Read this issue : https://github.com/swstechno/ESCPOS-ThermalPrinter/issues/80#issuecomment-729759832
 
 ### Class : `com.sws.escposprinter.connection.tcp.TcpConnection`
 
