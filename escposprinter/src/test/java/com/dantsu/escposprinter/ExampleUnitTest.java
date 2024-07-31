@@ -1,4 +1,4 @@
-package com.sws.escposprinter;
+package com.swstechno.escposprinter;
 
 import org.junit.Test;
 

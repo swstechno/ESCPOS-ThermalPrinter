@@ -5,13 +5,13 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
 
-import com.sws.escposprinter.EscPosCharsetEncoding;
-import com.sws.escposprinter.EscPosPrinter;
-import com.sws.escposprinter.connection.DeviceConnection;
-import com.sws.escposprinter.exceptions.EscPosBarcodeException;
-import com.sws.escposprinter.exceptions.EscPosConnectionException;
-import com.sws.escposprinter.exceptions.EscPosEncodingException;
-import com.sws.escposprinter.exceptions.EscPosParserException;
+import com.swstechno.escposprinter.EscPosCharsetEncoding;
+import com.swstechno.escposprinter.EscPosPrinter;
+import com.swstechno.escposprinter.connection.DeviceConnection;
+import com.swstechno.escposprinter.exceptions.EscPosBarcodeException;
+import com.swstechno.escposprinter.exceptions.EscPosConnectionException;
+import com.swstechno.escposprinter.exceptions.EscPosEncodingException;
+import com.swstechno.escposprinter.exceptions.EscPosParserException;
 
 import java.lang.ref.WeakReference;
 

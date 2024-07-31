@@ -405,7 +405,7 @@ Prints a QR code with a width and height of 25 millimeters.
 
 ## Class list
 
-### Class : `com.sws.escposprinter.connection.bluetooth.BluetoothPrintersConnections`
+### Class : `com.swstechno.escposprinter.connection.bluetooth.BluetoothPrintersConnections`
 
 #### **Static** Method : `selectFirstPaired()`
 Easy way to get the first bluetooth printer paired / connected.
@@ -417,14 +417,14 @@ Get a list of bluetooth printers.
 
 ⚠️ If the arrray returned by `getList()` does not contain you printer or if `selectFirstPaired()` does not return your printer. Read this issue : https://github.com/swstechno/ESCPOS-ThermalPrinter/issues/80#issuecomment-729759832
 
-### Class : `com.sws.escposprinter.connection.tcp.TcpConnection`
+### Class : `com.swstechno.escposprinter.connection.tcp.TcpConnection`
 
 #### Constructor : `TcpConnection(String address, int port[, int timeout])`
 - **param** `String address` : Targeted ip address
 - **param** `int port` : Targeted tcp port
 - **param** `int timeout` *(optional)* : Connection timeout (default : 30)
 
-### Class : `com.sws.escposprinter.connection.usb.UsbPrintersConnections`
+### Class : `com.swstechno.escposprinter.connection.usb.UsbPrintersConnections`
 
 #### **Static** Method : `selectFirstConnected()`
 Easy way to get the first USB printer connected.
@@ -434,7 +434,7 @@ Easy way to get the first USB printer connected.
 Get a list of USB printers.
 - **return** `UsbConnection[]`
 
-### Class : `com.sws.escposprinter.EscPosPrinter`
+### Class : `com.swstechno.escposprinter.EscPosPrinter`
 
 #### Constructor : `EscPosPrinter(DeviceConnection printer, int printerDpi, float printingWidthMM, int nbrCharactersPerLine [, EscPosCharsetEncoding charsetEncoding])`
 - **param** `DeviceConnection printer` : Instance of a connected printer
@@ -529,7 +529,7 @@ Convert Bitmap object to ESC/POS image.
 - **param** `boolean gradient` : `false` Black and white image, `true` Grayscale image
 - **return** `byte[]` : Bytes contain the image in ESC/POS command
 
-### Class : `com.sws.escposprinter.textparser.PrinterTextParserImg`
+### Class : `com.swstechno.escposprinter.textparser.PrinterTextParserImg`
 
 #### **Static** Method : `bitmapToHexadecimalString(Printer printer, Drawable drawable [, boolean gradient])`
 Convert Drawable instance to a hexadecimal string of the image data.
@@ -562,7 +562,7 @@ Convert hexadecimal string of the image data to bytes ESC/POS command.
 - **param** `String hexString` : Hexadecimal string of the image data.
 - **return** `byte[]` : Bytes contain the image in ESC/POS command.
 
-### Class : `com.sws.escposprinter.EscPosCharsetEncoding`
+### Class : `com.swstechno.escposprinter.EscPosCharsetEncoding`
 
 #### Constructor : `EscPosCharsetEncoding(String charsetName, int escPosCharsetId)`
 - **param** `charsetName` Name of charset encoding (Ex: ISO-8859-1)

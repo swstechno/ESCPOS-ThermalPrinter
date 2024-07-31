@@ -1,7 +1,7 @@
 package com.sws.thermalprinter.async;
 
-import com.sws.escposprinter.EscPosPrinterSize;
-import com.sws.escposprinter.connection.DeviceConnection;
+import com.swstechno.escposprinter.EscPosPrinterSize;
+import com.swstechno.escposprinter.connection.DeviceConnection;
 
 public class AsyncEscPosPrinter extends EscPosPrinterSize {
     private DeviceConnection printerConnection;

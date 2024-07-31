@@ -2,9 +2,9 @@ package com.sws.thermalprinter.async;
 
 import android.content.Context;
 
-import com.sws.escposprinter.connection.DeviceConnection;
-import com.sws.escposprinter.connection.bluetooth.BluetoothPrintersConnections;
-import com.sws.escposprinter.exceptions.EscPosConnectionException;
+import com.swstechno.escposprinter.connection.DeviceConnection;
+import com.swstechno.escposprinter.connection.bluetooth.BluetoothPrintersConnections;
+import com.swstechno.escposprinter.exceptions.EscPosConnectionException;
 
 public class AsyncBluetoothEscPosPrint extends AsyncEscPosPrint {
     public AsyncBluetoothEscPosPrint(Context context) {
