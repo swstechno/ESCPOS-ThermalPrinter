@@ -66,8 +66,10 @@ public class TcpConnection extends DeviceConnection {
             this.data = new byte[0];
         } catch (IOException e) {
             e.printStackTrace();
-            this.disconnect();
-            throw new EscPosConnectionException("Unable to connect to TCP device.");
+            // this.disconnect();
+            this.socket = null;
+            this.stream = null;
+            throw new EscPosConnectionException("Unable to connect to TCP device!");
         }
         return this;
     }
