@@ -60,7 +60,8 @@ public class TcpConnection extends DeviceConnection {
         }
         try {
             this.socket = new Socket();
-            this.socket.connect(new InetSocketAddress(InetAddress.getByName(this.address), this.port), this.timeout);
+            this.socket.connect(new InetSocketAddress(InetAddress.getByName(this.address), this.port));
+            // this.socket.connect(new InetSocketAddress(InetAddress.getByName(this.address), this.port), this.timeout);
             this.outputStream = this.socket.getOutputStream();
             this.data = new byte[0];
         } catch (IOException e) {
