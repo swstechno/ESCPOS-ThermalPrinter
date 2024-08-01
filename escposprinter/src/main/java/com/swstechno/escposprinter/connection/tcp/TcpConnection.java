@@ -22,24 +22,24 @@ public class TcpConnection extends DeviceConnection {
      * @param port    Port of the device
      */
     public TcpConnection(String address, int port) {
-        this(address, port, 0);
-    }
+    //     this(address, port, 30);
+    // }
 
-    /**
-     * Create un instance of TcpConnection.
-     * 
-     * Overload of the above function TcpConnection()
-     * Include timeout parameter in milliseconds.
-     *
-     * @param address IP address of the device
-     * @param port    Port of the device
-     * @param timeout Timeout in milliseconds to establish a connection
-     */
-    public TcpConnection(String address, int port, int timeout) {
+    // /**
+    //  * Create un instance of TcpConnection.
+    //  * 
+    //  * Overload of the above function TcpConnection()
+    //  * Include timeout parameter in milliseconds.
+    //  *
+    //  * @param address IP address of the device
+    //  * @param port    Port of the device
+    //  * @param timeout Timeout in milliseconds to establish a connection
+    //  */
+    // public TcpConnection(String address, int port, int timeout) {
         super();
         this.address = address;
         this.port = port;
-        this.timeout = timeout;
+        // this.timeout = timeout;
     }
 
     /**
@@ -60,8 +60,8 @@ public class TcpConnection extends DeviceConnection {
         }
         try {
             this.socket = new Socket();
-            // this.socket.connect(new InetSocketAddress(InetAddress.getByName(this.address), this.port));
-            this.socket.connect(new InetSocketAddress(InetAddress.getByName(this.address), this.port), this.timeout);
+            this.socket.connect(new InetSocketAddress(InetAddress.getByName(this.address), this.port));
+            // this.socket.connect(new InetSocketAddress(InetAddress.getByName(this.address), this.port), this.timeout);
             this.outputStream = this.socket.getOutputStream();
             this.data = new byte[0];
         } catch (IOException e) {
@@ -69,7 +69,7 @@ public class TcpConnection extends DeviceConnection {
             // this.disconnect();
             this.socket = null;
             this.outputStream = null;
-            throw new EscPosConnectionException("Unable to connect to TCP device!");
+            throw new EscPosConnectionException("Unable to connect to TCP device.");
         }
         return this;
     }
