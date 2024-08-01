@@ -22,7 +22,7 @@ public class TcpConnection extends DeviceConnection {
      * @param port    Port of the device
      */
     public TcpConnection(String address, int port) {
-        this(address, port, 1000);
+        this(address, port, 0);
     }
 
     /**
